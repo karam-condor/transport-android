@@ -175,8 +175,9 @@ public class CheckActivity extends AppCompatActivity implements View.OnClickList
 
 
     public void setUpNFDevRen(final int stEnt, final int stCred){
-        SingleShotLocationProvider.requestSingleUpdate(this, new SingleShotLocationProvider.LocationCallback() {
-            @Override public void onNewLocationAvailable(SingleShotLocationProvider.GPSCoordinates location) {
+        GoogleLocation.requestSingleUpdate(this, new GoogleLocation.LocationCallback() {
+            @Override public void onNewLocationAvailable(GoogleLocation.GPSCoordinates location) {
+                Log.i("karam1313", "setUpNFDevRen: ");
                 if(devRentregaPer!=1 && devRentregaPer!=4){
                     alertDialog.dismiss();
                 }
@@ -218,7 +219,6 @@ public class CheckActivity extends AppCompatActivity implements View.OnClickList
                     try {
                         String encodedParams = Methods.encode(map);
                         SRVConnection connection = new SRVConnection(CheckActivity.this,null,"response");
-                        SRVConnection SRVconnection = new SRVConnection(CheckActivity.this,null,"response");
                         connection.execute(getString(R.string.url_server_host)+getString(R.string.url_server_save_notadevren),encodedParams);
                     } catch (Exception e) {
                         e.printStackTrace();

@@ -221,7 +221,7 @@
             android:textSize="20sp"
             android:background="@color/colorGrey_app"
             android:scaleType="fitXY"
-            android:text="Restaurar"/>
+            android:text="Limpar"/>
     </LinearLayout>
 </ScrollView>
 
