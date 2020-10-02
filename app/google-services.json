@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "22747599994",
+    "firebase_url": "https://transport-5f723.firebaseio.com",
+    "project_id": "transport-5f723",
+    "storage_bucket": "transport-5f723.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22747599994:android:171baa16245fb6e5e157c3",
+        "android_client_info": {
+          "package_name": "com.karam.transport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22747599994-98it088vb9sqqp8ao89t1gg0pa7t905s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf9Mova-AAXoVWfu6lpkLT9Wr4swMt55Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22747599994-98it088vb9sqqp8ao89t1gg0pa7t905s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/cameraView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/barcodeOverlayText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/light_blue_800"
+            android:fontFamily="sans-serif-condensed-light"
+            android:textSize="20sp"
+            android:background="#07000000"
+            android:text=""/>
+        <ImageView
+            android:id="@+id/barcodeOverlayRect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rectangle_barcode"/>
+
+    </com.otaliastudios.cameraview.CameraView>
+
+    <View
+        android:id="@+id/upperCover"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/rectangle"
+        app:layout_constraintTop_toTopOf="@+id/cameraView" />
+
+    <View
+        android:id="@+id/lowerCover"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/rectangle"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <View
+        android:id="@+id/middleCover"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/rectangle_middle"
+        app:layout_constraintBottom_toTopOf="@id/lowerCover"
+        app:layout_constraintTop_toBottomOf="@+id/upperCover"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    <Button
+        android:id="@+id/btn_barcode_flash"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/flash_off"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.99"
+        app:layout_constraintHorizontal_bias="0.90"
+        android:textColor="@color/colorBlue_app"/>
+
+
+    <Button
+        android:id="@+id/btn_barcode_back"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/back_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.99"
+        app:layout_constraintHorizontal_bias="0.98"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

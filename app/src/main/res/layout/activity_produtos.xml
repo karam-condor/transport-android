@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@color/blue_grey_50">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:alpha="0.8"
+            android:paddingLeft="-12dp"
+            android:src="@drawable/side_item_orange" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-22dp"
+            android:alpha="0.85"
+            android:src="@drawable/delivery" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/prod_codcli_txtvw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:autoSizeMaxTextSize="22sp"
+                    android:autoSizeMinTextSize="18sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="65465"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="15dp"
+                    android:autoSizeMaxTextSize="22sp"
+                    android:autoSizeMinTextSize="18sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text=" - "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/prod_cliente_txtvw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="15dp"
+                    android:autoSizeMaxTextSize="22sp"
+                    android:autoSizeMinTextSize="18sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:maxLines="1"
+                    android:text="Construtora KYA para construção civilghfhfghfhgf"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:autoSizeMaxTextSize="22sp"
+                    android:autoSizeMinTextSize="18sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="NF: "
+                    android:textColor="@color/light_bg_dark_primary_text"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/prod_nf_txtvw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="7dp"
+                    android:autoSizeMaxTextSize="22sp"
+                    android:autoSizeMinTextSize="18sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="456456465"
+                    android:textColor="@color/light_bg_dark_primary_text"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:autoSizeMaxTextSize="22sp"
+                android:autoSizeMinTextSize="18sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Em conferência"
+                android:textColor="@color/blue_700"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/colorGrey_app"/>
+
+
+
+
+    <TextView
+        android:id="@+id/prod_count_txtvw"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:textAlignment="textEnd"
+        android:paddingRight="10dp"
+        android:layout_height="20dp"
+        android:background="@color/colorGrey_app"
+        android:translationZ="3dp"
+        android:elevation="5dp"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ListView
+            android:id="@+id/prod_listvw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="5dp"
+            android:divider="@android:color/transparent"/>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/prod_container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+</LinearLayout>

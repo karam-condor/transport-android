@@ -1,0 +1,220 @@
+<resources>
+    <string name="app_name">Speed Condor</string>
+    <string name="db_name">DBPEND</string>
+    <string name="db_version">1</string>
+    <string name="carregamento_greeting">Espero que tudo seja excelente.</string>
+    <string name="carregamento_title">N°CARREGAMENTO: </string>
+    <string name="login_codigo">Código: </string>
+    <string name="login_senha">Senha: </string>
+    <string name="login_missing_info">Inserir código e senha</string>
+    <string name="internet_connectivity_error">Sem conexão</string>
+    <string name="login_invalid_json_error">Resposta nula</string>
+    <string name="closing_alert">Para fechar, aperte novamente</string>
+    <string name="carreg_missing_info">Insere N°CARREGAMENTO</string>
+    <string name="carreg_button_text">SINCRONIZAR</string>
+    <string name="notas_button_finalizar_text">Finalizar viagem</string>
+    <string name="notas_status_Entregue">Entregue</string>
+    <string name="notas_status_Entregue_pend">Entregue pendencia ou devoluçao parcial</string>
+    <string name="notas_status_Entregue_dev">Entregue devolução</string>
+    <string name="notas_status_emtransito">Em trânsito</string>
+    <string name="notas_status_emconferencia">Em conferência</string>
+    <string name="notas_status_reentrega">Re-entrega</string>
+    <string name="conferencia_start_title">CONFÊRENCIA</string>
+    <string name="conferencia_button_start">Inciar confêrencia</string>
+    <string name="conferencia_button_dev">Devolução total</string>
+    <string name="conferencia_button_per">Entrega realizada com sucesso</string>
+    <string name="no_flash">O celular é sem flash</string>
+    <string name="details_local">Local de entrega</string>
+    <string name="details_obs">OBS de entrega</string>
+    <string name="credito_check">O cliente opitou por gerar crédito?</string>
+    <string name="invalid_barcode_nf">Codigo de barra invalido ou não pertence nem uma nota</string>
+    <string name="invalid_barcode_prod">Codigo de barra invalido ou não pertence á está nota</string>
+    <string name="invalid_barcode_nf2">Está nota já foi conferida</string>
+    <string name="canceling_checking">Para cancelar, Aperte novamente</string>
+    <string name="invalid_email_format">Email inválido</string>
+    <string name="gps_notEnables">Localização desativada, para realizar este processo deveria ativar-lo</string>
+    <string name="save_nfdevren_error">Aconteceu um erro na gravação, tente novamente</string>
+    <string name="check_prod_missing_info">Valor divergente</string>
+    <string name="maps_app_dialog">Qual aplicativo deseja usar?</string>
+    <string name="map_app_error">Aplicatiovo não encontrado</string>
+    <string name="finalizar_warning">Algumas entregas não foram informadas, deseja finalizar?\n
+    obs. a responsabilidade por não passar informação está sujeito a penalidade </string>
+    <string name="finalizar_no_connection">No momento não há conexão, aguarde cobertura para finalizar a viagem</string>
+    <string name="confirme_logout_msg">Fazer logout</string>
+    <string name="token_check">Insere o token</string>
+    <string name="autor">Developed by.Karam Yakoub Agha</string>
+    <string name="check_camera_exsited">Não poderia abrir a camera</string>
+    <string name="check_img_validation">Aconteceu um erro</string>
+    <string name="img_passed_3">Não pode tirar mais que 3 fotos por entrega</string>
+    <string name="save_img_error"></string>
+    //_____________________________________URLS
+    <string name="url_server_host">https://logistica.condorbrasil.com.br/transporte/php_app/</string>
+    <string name="url_server_login">Login.php</string>
+    <string name="url_server_load_carreg">LoadByCarga.php</string>
+    <string name="url_server_save_notadevren">SaveNotaDevRen.php</string>
+    <string name="url_server_save_conferencia">SaveNotaConfer.php</string>
+    <string name="url_server_save_auto">saveNotasProdsAuto.php</string>
+    <string name="url_server_token_check">token.php</string>
+    //_____________________________________SQL
+    <string name="db_sql_createTableCarga">CREATE TABLE IF NOT EXISTS CARGA
+        (
+        NUMCAR INT(8) NOT NULL,
+        DTSAIDA DATETIME,
+        DTFINAL DATETIME,
+        PRIMARY KEY(NUMCAR)
+        );
+    </string>
+    <string name="db_sql_createTableNF">CREATE TABLE IF NOT EXISTS NF
+                (
+                    ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                    NUMNOTA INT(10) NOT NULL,
+                    NUMCAR INT(8) NOT NULL,
+                    NUMPED INT(10) NOT NULL,
+                    NUMTRANSVENDA INT(10) NOT NULL,
+                    CODCLI INT(8),
+                    CLIENTE TEXT(60),
+                    EMAIL_CLIENTE TEXT(100),
+                    EMAIL_CLIENTE2 TEXT(100),
+                    UF TEXT(2),
+                    CIDADE TEXT(20),
+                    BAIRRO TEXT(40),
+                    ENDERECO TEXT(40),
+                    CEP TEXT(10),
+                    OBS1 TEXT(75),
+                    OBS2 TEXT(75),
+                    OBS3 TEXT(75),
+                    CODUSUR INT(4),
+                    RCA TEXT(40),
+                    EMAIL_RCA TEXT(100),
+                    OBSENTREGA TEXT(255),
+                    DTENT DATETIME,
+                    LATENT FLOAT(3,6),
+					LONGTENT FLOAT(3,6),
+                    CODMOTIVO INT(3),
+                    STENVI INT(1),
+                    STENT INT(1),
+                    STPEND INT(1),
+                    STCRED INT(1),
+                    PENDCODPROCESS INT(8),
+                    PENDDTENT DATETIME,
+                    PENDOBS TEXT(255),
+                    PENDLAT FLOAT(3,6),
+					PENDLONGT FLOAT(3,6),
+                    FOREIGN KEY(NUMCAR) REFERENCES CARGA(NUMCAR)
+                );</string>
+    <string name="db_sql_createTableProd">CREATE TABLE  IF NOT EXISTS PROD
+                (
+                    ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                    CODPROD INT(10) NOT NULL,
+                    NUMNOTA INT(10) NOT NULL,
+                    NUMCAR INT(10) NOT NULL,
+                    QT INT(6),
+                    DESCRICAO TEXT(40),
+                    CODBARRA1 INT(20),
+                    CODBARRA2 INT(20),
+                    QTFALTA INT(6),
+                    CODMOTIVO INT(3),
+                    PENDQT INT(3),
+                    PENDCODMOTIVO INT(3),
+                    STDEV INT(1),
+                    FOREIGN KEY(NUMNOTA) REFERENCES NF(NUMNOTA),
+                    FOREIGN KEY(NUMCAR) REFERENCES CARGA(NUMCAR)
+                );
+    </string>
+    <string name="db_sql_dropTableCarga">
+        DROP TABLE IF EXISTS CARGA;
+    </string>
+    <string name="db_sql_dropTableNF">
+        DROP TABLE IF EXISTS NF;
+    </string>
+    <string name="db_sql_dropTableProd">
+        DROP TABLE IF EXISTS PROD;
+    </string>
+    <string name="db_sql_delete_above_5_carga">
+        DELETE FROM CARGA WHERE NUMCAR IN (SELECT NUMCAR FROM CARGA WHERE DTSAIDA = (SELECT MIN(DTSAIDA) FROM CARGA));
+    </string>
+    <string name="db_sql_delete_above_5_NF">
+        DELETE FROM NF WHERE NUMCAR IN (SELECT NUMCAR FROM CARGA WHERE DTSAIDA = (SELECT MIN(DTSAIDA) FROM CARGA));
+    </string>
+    <string name="db_sql_delete_above_5_prod">
+        DELETE FROM PROD WHERE NUMCAR IN (SELECT NUMCAR FROM CARGA WHERE DTSAIDA = (SELECT MIN(DTSAIDA) FROM CARGA));
+    </string>
+    //___________________________Tags
+    <string name="main_activity_tag">MAINACTIVITY</string>
+    <string name="login_activity">LOGINACTIVITY</string>
+    <string name="db_connection_tag">DBCONNECTION</string>
+    <string name="login_main_frag">LOGINMAINFRAG</string>
+    <string name="login_carreg_frag">LOGINCARREGFRAG</string>
+    <string name="server_connection">SRVCONNECTION</string>
+    <string name="notas_activity">NOTASACTIVITY</string>
+    <string name="tag_unique_work">com.karam.transport</string>
+    //___________________________SHPREF
+    <string name="SHisLogin">isLogin</string>/type boolean
+    <string name="SHcarga">numCarga</string>//type boolean
+    <string name="SHcodmotorista">codMotorista</string>//type long
+    <string name="SHdesmotorista">desMotorista</string>//type long
+    <string name="SHnota">numNota</string>//type long
+    <string name="SHcodcli">codCli</string>//type long
+    <string name="SHcliente">cliente</string>//type string
+    <string name="SHemail_cliente">email_cliente</string>
+    <string name="SHnotaPosition">nota_position</string>
+    <string name="SHqtdNotasTotal">qtd_notas_total</string>
+    <string name="SHnumtransvenda">numtransvenda</string>
+    <string name="SHnumped">numped</string>
+    <string name="SHqtdNotas">qtd_notas</string>
+    <string name="SHtoken">token</string>
+    <string name="SHimgOrder">img_order</string>
+    <string name="SHimgOrderDevRenPer">img_order2</string>
+    //__________________________ARRAYS
+    //array motivos cos
+    <string-array name="motivos_dev_cod">
+        <item>1</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>11</item>
+        <item>12</item>
+        <item>15</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>24</item>
+        <item>25</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>36</item>
+        <item>40</item>
+        <item>145</item>
+        <item>152</item>
+    </string-array>
+    //array motivos des
+    <string-array name="motivos_dev_des">
+        <item>Cliente sem dinheiro</item>
+        <item>Esabelecimento fechado</item>
+        <item>Pedido em desacordo com o combinado</item>
+        <item>Preço em desacordo com o combinado</item>
+        <item>Endereço em desacordo com a nota fiscal</item>
+        <item>Falta de produto</item>
+        <item>Falta de produto no ato da entrega</item>
+        <item>Pedidoem duplicidade</item>
+        <item>Demora no recebimento da mercadoria</item>
+        <item>Fora da rota</item>
+        <item>Cliente desistiu da compra</item>
+        <item>Razão social errada</item>
+        <item>Cliente não aceita taxa de boleto</item>
+        <item>Mercadoria avariada</item>
+        <item>Erro na conferência</item>
+        <item>Cliente não fez pedido</item>
+        <item>Falha no sistema</item>
+        <item>Atraso na entrea</item>
+        <item>Alteração de nota fiscal</item>
+        <item>Prazo de entrega em desacordo com o combinado</item>
+    </string-array>
+    //_________________________Permissions
+    <string name="permission_title">Permissão</string>
+    <string name="permission_camera">Permitir acesso á camera</string>
+    <string name="permission_location">Permitir acesso á localização</string>
+    <string name="permission_audio">Permitir acesso á gravador de audio</string>
+</resources>

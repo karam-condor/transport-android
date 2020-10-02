@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/login_carreg_frag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_grey_50"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:autoSizeMaxTextSize="24sp"
+        android:autoSizeMinTextSize="16dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Boa Viagem!"
+        android:textAlignment="center"
+        android:textColor="@color/colorRed_app2"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorRed_app2"
+        android:layout_marginTop="2dp"
+        android:autoSizeMinTextSize="16sp"
+        android:autoSizeMaxTextSize="24sp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:textAlignment="center"
+        android:text="@string/carregamento_greeting"/>
+
+    <ImageView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/truck_start"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="116dp" />
+
+
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/plate_rect"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="@string/carregamento_title"
+            android:textColor="@color/grey_900"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/carreg_etxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:inputType="number"
+            android:imeOptions="actionDone"
+            android:textColor="@color/grey_900"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/carreg_btn"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:background="@color/colorGrey_app"
+            android:fontFamily="sans-serif-condensed-light"
+            android:textStyle="bold"
+            android:scaleType="fitXY"
+            android:text="@string/carreg_button_text"/>
+        <Button
+            android:id="@+id/carreg_cargas_btn"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:textStyle="bold"
+            android:background="@color/colorGrey_app"
+            android:scaleType="fitXY"
+            android:text="CARREGAMENTOS ANTERIORES"/>
+        <Button
+            android:id="@+id/carreg_logout_btn"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:textStyle="bold"
+            android:background="@color/colorGrey_app"
+            android:scaleType="fitXY"
+            android:text="LOGOUT"/>
+        <TextView
+            android:id="@+id/carreg_response_txtv"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/grey_900"
+            android:textSize="16sp"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/carreg_progress"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"/>
+</LinearLayout>

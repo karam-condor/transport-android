@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:background="@color/blue_grey_50"
+    android:elevation="2dp"
+    android:translationZ="2dp">
+    <ImageView
+        android:id="@+id/notas_item_leftImgvw"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="-10dp"
+        android:alpha="0.8"
+        android:src="@drawable/side_item_orange"/>
+    <ImageView
+        android:id="@+id/notas_status_ent_imgvw"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="-22dp"
+        android:layout_gravity="center"
+        android:alpha="0.85"
+        android:src="@drawable/stent_emtransito"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/notas_codcli_txtvw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:autoSizeMaxTextSize="22sp"
+                android:autoSizeMinTextSize="18sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="65465"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="15dp"
+                android:autoSizeMaxTextSize="22sp"
+                android:autoSizeMinTextSize="18sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text=" - "
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/notas_desc_txtvw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="15dp"
+                android:autoSizeMaxTextSize="22sp"
+                android:autoSizeMinTextSize="18sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="sans-serif-condensed-light"
+                android:maxLines="1"
+                android:text="Construtora KYA para construção civilghfhfghfhgf"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:autoSizeMaxTextSize="22sp"
+                android:autoSizeMinTextSize="18sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="NF: "
+                android:textColor="@color/light_bg_dark_primary_text"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/notas_nf_txtvw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="7dp"
+                android:autoSizeMaxTextSize="22sp"
+                android:autoSizeMinTextSize="18sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="456456465"
+                android:textColor="@color/light_bg_dark_primary_text"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/notas_status_txtvw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="22dp"
+                android:autoSizeMaxTextSize="22sp"
+                android:autoSizeMinTextSize="18sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Entregue"
+                android:textColor="@color/blue_700"
+                android:textSize="18sp"
+                android:textStyle="italic"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layoutDirection="rtl">
+
+                <ImageButton
+                    android:id="@+id/notas_details_imgvw"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/list_btn_selector_details"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="center"/>
+
+                <ImageButton
+                    android:id="@+id/notas_checkin_imgvw"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/list_btn_selector_checkin"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="center"/>
+                <ImageButton
+                    android:id="@+id/notas_location_imgvw"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/list_btn_selector_location"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

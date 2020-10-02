@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    //shadow
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="5dp"/>
+            <solid android:color="@color/grey_300"/>
+        </shape>
+    </item>
+
+
+    <item android:bottom="12px" android:right="12px" android:left="12px">
+        <shape android:shape="rectangle">
+            <corners android:radius="5dp"/>
+            <stroke android:color="@color/black" android:width="1dp"/>
+            <solid android:color="@color/colorBege_app"/>
+        </shape>
+    </item>
+
+
+</layer-list>

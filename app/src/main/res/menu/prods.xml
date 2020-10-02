@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/prod_menu_finalizar" android:title="Finalizar"
+        android:icon="@drawable/scan"/>
+    <item android:id="@+id/prod_menu_cancelar" android:title="Cancelar"
+        android:icon="@drawable/scan"/>
+    <item android:id="@+id/prod_menu_barcode" android:title="Leitora de codígo de barra"
+        android:icon="@drawable/scan"
+        app:showAsAction="always" />
+    <item android:id="@+id/prod_menu_search" android:title="Pesquisar"
+        android:icon="@drawable/search"
+        app:showAsAction="always"
+        app:actionViewClass="android.widget.SearchView"/>
+</menu>
