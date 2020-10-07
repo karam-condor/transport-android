@@ -362,9 +362,9 @@ public class ProdutosActivity extends AppCompatActivity implements TaskListenerA
     }
 
     private void executeAll(){
-        SingleShotLocationProvider.requestSingleUpdate(this, new SingleShotLocationProvider.LocationCallback() {
+        GoogleLocation.requestSingleUpdate(this, new GoogleLocation.LocationCallback() {
             @Override
-            public void onNewLocationAvailable(SingleShotLocationProvider.GPSCoordinates location) {
+            public void onNewLocationAvailable(GoogleLocation.GPSCoordinates location) {
                 Methods.showLoadingDialog(ProdutosActivity.this);
                 String jsonArr="";
                 //start new connetion to the database

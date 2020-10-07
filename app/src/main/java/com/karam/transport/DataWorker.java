@@ -48,9 +48,9 @@ public class DataWorker extends ListenableWorker {
     @Override
     public ListenableFuture<Result> startWork() {
         if(Methods.checkGPSTurndOnWithOutAct(getApplicationContext())){
-            SingleShotLocationProvider.requestSingleUpdate(getApplicationContext(), new SingleShotLocationProvider.LocationCallback() {
+            GoogleLocation.requestSingleUpdate(getApplicationContext(), new GoogleLocation.LocationCallback() {
                 @Override
-                public void onNewLocationAvailable(SingleShotLocationProvider.GPSCoordinates location) {
+                public void onNewLocationAvailable(GoogleLocation.GPSCoordinates location) {
                     enviar(Methods.roundFloat(location.latitude,6),Methods.roundFloat(location.longitude,6));
                     Log.i(TAG, "1-Todas as notas foram enviadas com sucesso.\n2-Localização atualizada com sucesso ");
                 }

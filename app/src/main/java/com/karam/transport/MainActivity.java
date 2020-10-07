@@ -28,38 +28,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final String TAG = getString(R.string.main_activity_tag);
-        Dexter.withContext(this).withPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-                .withListener(new PermissionListener() {
-                    @Override
-                    public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
+        if(Methods.checkPlayServices(this,this)){
+            Dexter.withContext(this).withPermission(Manifest.permission.ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
+                @Override
+                public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                @Override
+                public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+                    View view = Methods.setToastView(MainActivity.this,getString(R.string.permission_title),true,
+                            getString(R.string.permission_location), true,"Conceder",true,
+                            "Negar",true);
+                    Button btnConfirm = view.findViewById(R.id.toast_btn_confirm);
+                    btnConfirm.setOnClickListener(MainActivity.this);
+                    Button btnCancel= view.findViewById(R.id.toast_btn_dismiss);
+                    btnCancel.setOnClickListener(MainActivity.this);
+                    alertDialog = new AlertDialog.Builder(MainActivity.this)
+                            .setView(view).create();
+                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    alertDialog.show();
+                }
+                @Override
+                public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+                    permissionToken.continuePermissionRequest();
+                }
+            }).check();
+        }else{
 
-                    @Override
-                    public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
-                        View view = Methods.setToastView(MainActivity.this,getString(R.string.permission_title),true,
-                                getString(R.string.permission_location), true,"Conceder",true,
-                                "Negar",true);
-                        Button btnConfirm = view.findViewById(R.id.toast_btn_confirm);
-                        btnConfirm.setOnClickListener(MainActivity.this);
-                        Button btnCancel= view.findViewById(R.id.toast_btn_dismiss);
-                        btnCancel.setOnClickListener(MainActivity.this);
-                        alertDialog = new AlertDialog.Builder(MainActivity.this)
-                                .setView(view).create();
-                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                        alertDialog.show();
-                    }
 
-                    @Override
-                    public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
-                        permissionToken.continuePermissionRequest();
-                    }
-                }).check();
+        }
     }
-
-
 
     @Override
     public void onClick(View v) {

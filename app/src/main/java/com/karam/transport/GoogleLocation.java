@@ -30,7 +30,7 @@ public class GoogleLocation {
             @Override
             public void onComplete(@NonNull Task<Location> task) {
                 Location location = task.getResult();
-                if (location != null) {
+                if (task.isSuccessful() && location != null) {
                     callback.onNewLocationAvailable(new GPSCoordinates(location.getLatitude(),location.getLongitude()));
                 }else{
                     callback.onNewLocationAvailable(new GPSCoordinates(0,0));
