@@ -236,10 +236,8 @@ public class RecordFrag extends BottomSheetDialogFragment implements View.OnClic
             case R.id.check_finilizar_btn:
                 isFinalizar = true;
                 if(whitchActivity==0){
-                    btnFinalizar.setEnabled(false);
                     ((CheckActivity)getActivity()).finalizar();
                 }else if(whitchActivity==1){
-                    btnFinalizar.setEnabled(false);
                     ((ProdutosActivity)getActivity()).finalizar();
                 }
                 break;
