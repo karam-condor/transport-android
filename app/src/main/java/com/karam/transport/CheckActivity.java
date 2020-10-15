@@ -148,6 +148,8 @@ public class CheckActivity extends AppCompatActivity implements View.OnClickList
         }
         Methods.deleteImages(this,numcar,numnota);
         Methods.setSharedPref(CheckActivity.this,"int",getString(R.string.SHimgOrderDevRenPer),0);
+        Intent intent = new Intent(this,NotasActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -164,7 +166,7 @@ public class CheckActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onTaskFinish(String response) {
-        Log.i("karam1313", "reached");
+        Log.i("karam1313", response);
         if(response.trim().equals("ok")){
             nf.setStenvi(1);
         }
@@ -177,7 +179,6 @@ public class CheckActivity extends AppCompatActivity implements View.OnClickList
     public void setUpNFDevRen(final int stEnt, final int stCred){
         GoogleLocation.requestSingleUpdate(this, new GoogleLocation.LocationCallback() {
             @Override public void onNewLocationAvailable(GoogleLocation.GPSCoordinates location) {
-                Log.i("karam1313", "setUpNFDevRen: ");
                 if(devRentregaPer!=1 && devRentregaPer!=4){
                     alertDialog.dismiss();
                 }
@@ -218,6 +219,7 @@ public class CheckActivity extends AppCompatActivity implements View.OnClickList
                             email,motivoCod[posSpinner], String.valueOf(nf.getStcred()),nf.getStent().toString(),audio,fileName,String.valueOf(nf.getNumtransvenda()),String.valueOf(nf.getNumped()),images);
                     try {
                         String encodedParams = Methods.encode(map);
+                        Log.i("karam1313", String.valueOf(encodedParams));
                         SRVConnection connection = new SRVConnection(CheckActivity.this,null,"response");
                         connection.execute(getString(R.string.url_server_host)+getString(R.string.url_server_save_notadevren),encodedParams);
                     } catch (Exception e) {
@@ -292,6 +294,8 @@ public class CheckActivity extends AppCompatActivity implements View.OnClickList
                 //Close the dialog and the activity
                 finish();
                 Methods.setSharedPref(CheckActivity.this,"int",getString(R.string.SHimgOrderDevRenPer),0);
+                Intent intent = new Intent(CheckActivity.this,NotasActivity.class);
+                startActivity(intent);
             }else{
                 View view = Methods.setToastView(CheckActivity.this,"",false,getString(R.string.save_nfdevren_error),
                         true,"",false,"",false);

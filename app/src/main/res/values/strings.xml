@@ -48,7 +48,7 @@
     <string name="img_passed_3">Não pode tirar mais que 3 fotos por entrega</string>
     <string name="save_img_error"></string>
     //_____________________________________URLS
-    <string name="url_server_host">https://logistica.condorbrasil.com.br/transporte/php_app/</string>
+    <string name="url_server_host">https://logistica.condorbrasil.com.br/transporte/php_app_test/</string>
     <string name="url_server_login">Login.php</string>
     <string name="url_server_load_carreg">LoadByCarga.php</string>
     <string name="url_server_save_notadevren">SaveNotaDevRen.php</string>

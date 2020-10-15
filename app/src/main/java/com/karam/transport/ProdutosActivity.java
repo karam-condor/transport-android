@@ -104,6 +104,7 @@ public class ProdutosActivity extends AppCompatActivity implements TaskListenerA
                 lisPosition = position;
                 intent.putExtras(bundle);
                 startActivity(intent);
+                finish();
             }
         });
         LocalBroadcastManager.getInstance(this).registerReceiver(barcodeReciever, new IntentFilter("GETBARCODEPROD"));

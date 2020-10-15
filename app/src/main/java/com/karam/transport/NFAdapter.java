@@ -183,6 +183,7 @@ public class NFAdapter extends BaseAdapter implements Filterable {
                 Intent intent = new Intent(activity,CheckActivity.class);
                 intent.putExtras(args);
                 activity.startActivity(intent);
+                NotasActivity.getInstance().finish();
             }
         });
         locationBtn.setOnClickListener(new View.OnClickListener() {

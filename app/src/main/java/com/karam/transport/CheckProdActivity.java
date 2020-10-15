@@ -132,6 +132,8 @@ public class CheckProdActivity extends AppCompatActivity implements View.OnClick
                         intent.putExtra("status",prod.getStdev());
                         LocalBroadcastManager.getInstance(getBaseContext()).sendBroadcast(intent);
                         finish();
+                        Intent intentProdutos = new Intent(this,ProdutosActivity.class);
+                        startActivity(intentProdutos);
                     }else{
                         View view = Methods.setToastView(CheckProdActivity.this, "", false,"Aconteceu um erro em salvar",
                                 true, "", false, "", false);
@@ -167,6 +169,8 @@ public class CheckProdActivity extends AppCompatActivity implements View.OnClick
                 intent.putExtra("status",prod.getStdev());
                 LocalBroadcastManager.getInstance(getBaseContext()).sendBroadcast(intent);
                 finish();
+                Intent intentProdutos = new Intent(this,ProdutosActivity.class);
+                startActivity(intentProdutos);
         }
     }
 
@@ -185,5 +189,12 @@ public class CheckProdActivity extends AppCompatActivity implements View.OnClick
             Methods.CloseSoftKeyboradOnTouch(this);
         }
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this,ProdutosActivity.class);
+        startActivity(intent);
     }
 }
