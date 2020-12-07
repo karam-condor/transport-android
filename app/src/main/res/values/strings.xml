@@ -4,7 +4,7 @@
     <string name="db_version">1</string>
     <string name="carregamento_greeting">Espero que tudo seja excelente.</string>
     <string name="carregamento_title">N°CARREGAMENTO: </string>
-    <string name="login_codigo">Código: </string>
+    <string name="login_codigo">Código: </string>me
     <string name="login_senha">Senha: </string>
     <string name="login_missing_info">Inserir código e senha</string>
     <string name="internet_connectivity_error">Sem conexão</string>
@@ -26,7 +26,7 @@
     <string name="no_flash">O celular é sem flash</string>
     <string name="details_local">Local de entrega</string>
     <string name="details_obs">OBS de entrega</string>
-    <string name="credito_check">O cliente opitou por gerar crédito?</string>
+    <string name="credito_check">O cliente optou por gerar crédito?</string>
     <string name="invalid_barcode_nf">Codigo de barra invalido ou não pertence nem uma nota</string>
     <string name="invalid_barcode_prod">Codigo de barra invalido ou não pertence á está nota</string>
     <string name="invalid_barcode_nf2">Está nota já foi conferida</string>
@@ -100,6 +100,7 @@
                     PENDOBS TEXT(255),
                     PENDLAT FLOAT(3,6),
 					PENDLONGT FLOAT(3,6),
+                    SEQ INT(3),
                     FOREIGN KEY(NUMCAR) REFERENCES CARGA(NUMCAR)
                 );</string>
     <string name="db_sql_createTableProd">CREATE TABLE  IF NOT EXISTS PROD
@@ -208,7 +209,7 @@
         <item>Erro na conferência</item>
         <item>Cliente não fez pedido</item>
         <item>Falha no sistema</item>
-        <item>Atraso na entrea</item>
+        <item>Atraso na entrega</item>
         <item>Alteração de nota fiscal</item>
         <item>Prazo de entrega em desacordo com o combinado</item>
     </string-array>

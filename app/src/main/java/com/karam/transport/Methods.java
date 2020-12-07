@@ -448,7 +448,7 @@ public class Methods {
                             map.get("UF").replace("\n", "").replace("\r", ""),map.get("CIDADE").replace("\n", "").replace("\r", ""),
                             map.get("BAIRRO").replace("\n", "").replace("\r", ""),map.get("OBS1"),map.get("OBS2"),map.get("OBS3"),
                             null,map.get("RCA"),map.get("EMAIL_RCA"),null,null,null,
-                            null,null,0,0,0,-1,map.get("ENDERECO"),map.get("CEP"),longParser(map.get("NUMPED")),longParser(map.get("NUMTRANSVENDA")));
+                            null,null,0,0,0,-1,map.get("ENDERECO"),map.get("CEP"),longParser(map.get("NUMPED")),longParser(map.get("NUMTRANSVENDA")),integerParser(map.get("SEQ")));
                     dbConnection.insertNF(nf,"OBSINTREGA,DTENT,LATENT,LONGTENT,PENDLAT,PENDLONGT",SQLiteDatabase.CONFLICT_REPLACE);
                 }
             }catch (SQLiteException ex){
@@ -493,7 +493,7 @@ public class Methods {
                                 map.get("OBS1"),map.get("OBS2"),map.get("OBS3"),
                                 null,map.get("RCA"),map.get("EMAIL_RCA"),null,null,null,
                                 FloatParser(map.get("LAT")),FloatParser(map.get("LONGT")),0,0,1,-1,map.get("ENDERECO"),map.get("CEP"),
-                                longParser(map.get("CODPROCESS")),map.get("DTENTREGA"),map.get("OBSENT"),longParser(map.get("NUMPED")),longParser(map.get("NUMTRANSVENDA")));
+                                longParser(map.get("CODPROCESS")),map.get("DTENTREGA"),map.get("OBSENT"),longParser(map.get("NUMPED")),longParser(map.get("NUMTRANSVENDA")),-1000);//set too low sequence order for nota de pendencia
                         dbConnection.insertNF(nfpend,"OBSINTREGA,DTENT,LATENT,PENDLONGT",SQLiteDatabase.CONFLICT_REPLACE);
                     }
                 }catch (SQLiteException ex){

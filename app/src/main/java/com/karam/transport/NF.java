@@ -4,7 +4,21 @@ public class NF {
     Long numnota, numcar, codcli, codusur,pendcodprocess,numped,numtransvenda;
     String cliente, email_cliente,email_cliene2, uf, ciddade, bairro, obs1, obs2, obs3, obsentrega, rca, email_rca, dtent,penddtent,endereco,cep,pendobs;
     Float latent, longtent, pendlat, pendlongt;
-    Integer stenvi, stent, stpend,stcred,codmotivo;
+    Integer stenvi;
+    Integer stent;
+    Integer stpend;
+    Integer stcred;
+    Integer codmotivo;
+
+    public Integer getSeq() {
+        return seq;
+    }
+
+    public void setSeq(Integer seq) {
+        this.seq = seq;
+    }
+
+    Integer seq;
 
 
     public Long getNumped() {
@@ -61,7 +75,7 @@ public class NF {
               String cliente, String email_cliente,String email_cliene2, String uf, String ciddade,
               String bairro, String obs1, String obs2, String obs3, String obsentrega,
               String rca, String email_rca, String dtent, Float latent, Float longtent,
-              Float pendlat, Float pendlongt, Integer stenvi, Integer stent, Integer stpend,Integer stcred,String endereco,String cep,long numped,long numtransvenda) {
+              Float pendlat, Float pendlongt, Integer stenvi, Integer stent, Integer stpend,Integer stcred,String endereco,String cep,long numped,long numtransvenda,int seq) {
         this.numped = numped;
         this.numtransvenda = numtransvenda;
         this.numnota = numnota;
@@ -91,6 +105,7 @@ public class NF {
         this.stcred = stcred;
         this.endereco = endereco;
         this.cep = cep;
+        this.seq = seq;
     }
 
     public NF(Long numnota, Long numcar, Long codcli, Long codusur,
@@ -99,7 +114,7 @@ public class NF {
               String rca, String email_rca, String dtent, Float latent, Float longtent,
               Float pendlat, Float pendlongt, Integer stenvi, Integer stent, Integer stpend,
               Integer stcred,String endereco,String cep,Long pendcodprocess,
-              String penddtent,String pendobs,long numped,long numtransvenda) {
+              String penddtent,String pendobs,long numped,long numtransvenda,int seq) {
         this.numped = numped;
         this.numtransvenda = numtransvenda;
         this.numnota = numnota;
@@ -132,6 +147,7 @@ public class NF {
         this.pendcodprocess = pendcodprocess;
         this.pendobs = pendobs;
         this.penddtent = penddtent;
+        this.seq = seq;
     }
 
 

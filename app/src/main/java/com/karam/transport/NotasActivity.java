@@ -51,7 +51,6 @@ public class NotasActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notas);
-        Log.i(TAG, "onCreate: ");
         //assign a static instance of this actitvity
         nActivity = this;
         TAG = getString(R.string.notas_activity);
@@ -253,6 +252,7 @@ public class NotasActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onTaskFinish(String response) {
+        Log.i(TAG, response);
         if(response.trim().equals("ok")){
             AfterFinish afterFinish = new AfterFinish();
             afterFinish.execute();
@@ -298,9 +298,10 @@ public class NotasActivity extends AppCompatActivity implements View.OnClickList
             Long numcarga = longs[0];
             nfList = new ArrayList<>();
             Cursor c = dbConnection.select(false, "NF", new String[]{"NUMNOTA", "CODCLI", "CLIENTE", "EMAIL_CLIENTE", "STENT", "STPEND", "UF", "CIDADE", "ENDERECO", "CEP",
-                            "BAIRRO", "OBS1", "OBS2", "OBS3","DTENT","PENDCODPROCESS","PENDDTENT","PENDOBS","PENDLAT","PENDLONGT","NUMTRANSVENDA","NUMPED"},
-                    "NUMCAR=? OR (NUMCAR=? AND STPEND = 1)", new String[]{String.valueOf(numcarga)}
-                    , null, null, "CLIENTE", null);
+                            "BAIRRO", "OBS1", "OBS2", "OBS3","DTENT","PENDCODPROCESS","PENDDTENT","PENDOBS","PENDLAT","PENDLONGT","NUMTRANSVENDA","NUMPED","SEQ"},
+                    "NUMCAR=? OR (NUMCAR=? AND STPEND = 1) ORDER BY SEQ DESC", new String[]{String.valueOf(numcarga)}
+                    , null, null, null, null);
+            Log.i(TAG, String.valueOf(c.getCount()));
             if (c != null) {
                 c.moveToFirst();
                 while (c != null && c.isAfterLast() == false) {
@@ -412,7 +413,11 @@ public class NotasActivity extends AppCompatActivity implements View.OnClickList
                 new AsyncTask<Void,Void,String>(){
                     @Override
                     protected String doInBackground(Void... voids) {
-                        Looper.prepare();
+                        try{
+                            Looper.prepare();
+                        }catch (Exception ex){
+
+                        }
                         DBConnection dbConnection = new DBConnection(NotasActivity.this);
                         Cursor c =dbConnection.select(false, "NF", new String[]{"NUMNOTA"},
                                 "STENT = 0 AND NUMCAR = ?", new String[]{String.valueOf(numcar)},null,null,null,null);//condition all nota checked if equal to 0
